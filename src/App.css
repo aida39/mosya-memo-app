@@ -1,3 +1,70 @@
-.app{
- display: flex;
+.app {
+    display: flex;
+    justify-content: space-around;
+}
+
+.side-menu {
+    border-right: 2px solid #E8EAED;
+    background-color: #FAFBFB;
+}
+
+.header {
+    width: 35vw;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E8EAED;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+}
+
+.app-title {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.add-icon {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.memo-search {
+    width: 90%;
+    margin: 10px auto 20px;
+    padding: 10px;
+    border: 2px solid #E8EAED;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.memo-item {
+    width: 85%;
+    margin: 10px auto 20px;
+    display: flex;
+    align-items: center;
+}
+
+.memo-title{
+    color: #6C7381;
+}
+
+.memo-button{
+    width: 90%;
+    height: 35px;
+    margin: 10px auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #000;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
