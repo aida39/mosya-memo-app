@@ -52,11 +52,16 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
-.memo-item:hover{
+.memo-item:hover {
     background-color: #E8EAED;
+}
+
+.memo-item.selected {
+    background-color: #d1d2d4;
+    font-weight: bold;
 }
 
 .memo-title {
@@ -92,7 +97,7 @@
     margin: 20px;
     padding: 5px;
     border: none;
-    color: #9CA3AF;
+    color: #757575;
     font-weight: bold;
     font-size: 20px;
 }
@@ -108,7 +113,7 @@
     padding: 5px;
     border: 2px solid #E8EAED;
     border-radius: 5px;
-    color: #9CA3AF;
+    color: #757575;
     font-weight: bold;
     font-size: 20px;
 }
