@@ -1,6 +1,21 @@
 import React from 'react'
+import { v4 as uuidv4 } from 'uuid';
+import { useState, useRef } from 'react';
 
 const SideMenu = () => {
+    const [memos, setMemos] = useState([
+        { id: uuidv4(), text: "初期データ", title: "テスト用初期データ" }
+    ]);
+
+    // const memoNameRef = useRef();
+
+    const handleAddMemo = () => {
+        // const name = memoNameRef.current.value
+        // if (name === "") return
+        setMemos((prevmemos) => {
+            return [...prevmemos, { id: uuidv4(), text: null, title: null }]
+        })
+    }
     return (
         <div className='side-menu'>
             <div className="header">
@@ -8,15 +23,18 @@ const SideMenu = () => {
                     <img src="./images/memo-icon.svg" alt="memo-icon" className="memo-icon" />
                     <h1 className='app-title'>MemoApp</h1>
                 </div>
-                <span className='add-icon'>+</span>
+                <span className='add-icon' onClick={handleAddMemo}>+</span>
             </div>
             <div className="memo-list">
                 <input type="text" className="memo-search" placeholder='Search memos...' />
-                <div className="memo-item">
-                    <img src="./images/memo.svg" alt="memo" />
-                    <span className='memo-title'>タイトルなし</span>
-                </div>
-                <button className='memo-button'>Add Memo</button>
+                {memos.map((memo) => (
+                    <div className="memo-item" key={memo.id}>
+                        <img src="./images/memo.svg" alt="memo" />
+                        <span className='memo-title'>{memo.title ?? "タイトルなし"}</span>
+                    </div>
+                ))
+                }
+                <button className='memo-button' onClick={handleAddMemo}>Add Memo</button>
 
             </div>
         </div>

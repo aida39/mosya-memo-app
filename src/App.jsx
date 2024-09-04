@@ -3,7 +3,6 @@ import './reset.css'
 import Form from "./Form.jsx";
 import SideMenu from "./SideMenu.jsx";
 
-
 function App() {
 
   return (
