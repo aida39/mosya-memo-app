@@ -2,7 +2,7 @@ import React from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import { useState, useRef } from 'react';
 
-const SideMenu = () => {
+const SideMenu = ({ setSelectedMemo }) => {
     const [memos, setMemos] = useState([
         { id: uuidv4(), text: "初期データ", title: "テスト用初期データ" }
     ]);
@@ -13,9 +13,14 @@ const SideMenu = () => {
         // const name = memoNameRef.current.value
         // if (name === "") return
         setMemos((prevmemos) => {
-            return [...prevmemos, { id: uuidv4(), text: null, title: null }]
+            return [...prevmemos, { id: uuidv4(), text: "text", title: "test" }]
         })
     }
+
+    const handleMemoClick = (memo) => {
+        setSelectedMemo(memo);
+    }
+
     return (
         <div className='side-menu'>
             <div className="header">
@@ -28,7 +33,7 @@ const SideMenu = () => {
             <div className="memo-list">
                 <input type="text" className="memo-search" placeholder='Search memos...' />
                 {memos.map((memo) => (
-                    <div className="memo-item" key={memo.id}>
+                    <div className="memo-item" key={memo.id} onClick={() => handleMemoClick(memo)}>
                         <img src="./images/memo.svg" alt="memo" />
                         <span className='memo-title'>{memo.title ?? "タイトルなし"}</span>
                     </div>

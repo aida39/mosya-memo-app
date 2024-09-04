@@ -4,13 +4,13 @@
 }
 
 .side-menu {
+    width: 100%;
     border-right: 2px solid #E8EAED;
     background-color: #FAFBFB;
 }
 
 .header {
-    width: 35vw;
-    padding: 20px 40px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,6 +20,7 @@
 .header-title {
     display: flex;
     align-items: center;
+    padding: 20px;
 }
 
 .app-title {
@@ -28,6 +29,7 @@
 }
 
 .add-icon {
+    padding-right: 20px;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -46,15 +48,22 @@
 .memo-item {
     width: 85%;
     margin: 10px auto 20px;
+    padding: 5px 10px;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    border-radius: 3px;
 }
 
-.memo-title{
+.memo-item:hover{
+    background-color: #E8EAED;
+}
+
+.memo-title {
     color: #6C7381;
 }
 
-.memo-button{
+.memo-button {
     width: 90%;
     height: 35px;
     margin: 10px auto 20px;
@@ -67,4 +76,39 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.form {
+    width: 100%;
+}
+
+.title-area {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-title {
+    margin: 20px;
+    padding: 5px;
+    border: none;
+    color: #9CA3AF;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.delete-icon {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.form-text {
+    width: 90%;
+    margin: 20px;
+    padding: 5px;
+    border: 2px solid #E8EAED;
+    border-radius: 5px;
+    color: #9CA3AF;
+    font-weight: bold;
+    font-size: 20px;
 }
