@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const Form = ({ memo, updateMemo }) => {
+const Form = ({ memo, updateMemo,deleteMemo }) => {
     const titleRef = useRef();
     const textRef = useRef();
 
@@ -19,6 +19,12 @@ const Form = ({ memo, updateMemo }) => {
         }
     };
 
+    const deleteClick = () => {
+        if (memo?.id) {
+            deleteMemo(memo.id);
+        }
+    };
+
     return (
         <div className='form'>
             <div className="title-area">
@@ -28,7 +34,7 @@ const Form = ({ memo, updateMemo }) => {
                     ref={titleRef}
                     placeholder="タイトルを入力"
                 />
-                <img src="./images/delete.svg" alt="trash-box" className='delete-icon' />
+                <img src="./images/delete.svg" alt="trash-box" className='delete-icon' onClick={deleteClick} />
             </div>
             <div className="form-content">
                 <textarea

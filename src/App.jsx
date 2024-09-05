@@ -26,10 +26,19 @@ function App() {
     setSelectedMemo(newMemo);
   };
 
+  const deleteMemo = (id) => {
+    if (window.confirm('このメモを削除しますか？')) {
+      setMemos((prevMemos) => prevMemos.filter((memo) => memo.id !== id));
+      if (selectedMemo && selectedMemo.id === id) {
+        setSelectedMemo(null);
+      }
+    }
+  };
+
   return (
     <div className='app'>
       <SideMenu memos={memos} selectedMemo={selectedMemo} setSelectedMemo={setSelectedMemo} addMemo={addMemo} />
-      <Form memo={selectedMemo} updateMemo={updateMemo} />
+      <Form memo={selectedMemo} updateMemo={updateMemo} deleteMemo={deleteMemo} />
     </div>
   );
 }
