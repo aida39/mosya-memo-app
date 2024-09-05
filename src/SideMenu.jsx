@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SideMenu = ({ memos, selectedMemo, setSelectedMemo, addMemo }) => {
+const SideMenu = ({ memos, selectedMemo, setSelectedMemo, addMemo, search, setSearch }) => {
     return (
         <div className='side-menu'>
             <div className="header">
@@ -11,11 +11,17 @@ const SideMenu = ({ memos, selectedMemo, setSelectedMemo, addMemo }) => {
                 <span className='add-icon' onClick={addMemo}>+</span>
             </div>
             <div className="memo-list">
-                <input type="text" className="memo-search" placeholder='Search memos...' />
+                <input
+                    type="text"
+                    className="memo-search"
+                    placeholder='Search memos...'
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                />
                 {memos.map((memo) => (
-                    <div 
+                    <div
                         className={`memo-item ${selectedMemo && selectedMemo.id === memo.id ? 'selected' : ''}`}
-                        key={memo.id} 
+                        key={memo.id}
                         onClick={() => setSelectedMemo(memo)}
                     >
                         <img src="./images/memo.svg" alt="memo" />

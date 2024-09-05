@@ -35,9 +35,21 @@ function App() {
     }
   };
 
+  const [search, setSearch] = useState("");
+  const filteredMemos = memos.filter((memo) =>
+    memo.title.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className='app'>
-      <SideMenu memos={memos} selectedMemo={selectedMemo} setSelectedMemo={setSelectedMemo} addMemo={addMemo} />
+      <SideMenu
+        memos={filteredMemos}
+        selectedMemo={selectedMemo}
+        setSelectedMemo={setSelectedMemo}
+        addMemo={addMemo}
+        search={search}
+        setSearch={setSearch}
+      />
       <Form memo={selectedMemo} updateMemo={updateMemo} deleteMemo={deleteMemo} />
     </div>
   );
